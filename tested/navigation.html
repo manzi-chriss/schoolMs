@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Divisions</title>
+    <style>
+        /* Add your CSS styles here */
+        #sidebar {
+            width: 20%;
+            float: left;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        #content {
+            width: 80%;
+            float: left;
+            padding: 20px;
+        }
+
+        .division {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <button onclick="showDivision(1)">Button 1</button>
+        <button onclick="showDivision(2)">Button 2</button>
+        <button onclick="showDivision(3)">Button 3</button>
+        <button onclick="showDivision(4)">Button 4</button>
+    </div>
+    <div id="content">
+        <!-- Initially rendered division -->
+        <div class="division" id="division1">
+            <h2>Division 1</h2>
+            <p>This is division 1 content.</p>
+        </div>
+        <!-- Other divisions -->
+        <div class="division" id="division2">
+            <h2>Division 2</h2>
+            <p>This is division 2 content.</p>
+        </div>
+        <div class="division" id="division3">
+            <h2>Division 3</h2>
+            <p>This is division 3 content.</p>
+        </div>
+        <div class="division" id="division4">
+            <h2>Division 4</h2>
+            <p>This is division 4 content.</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript function to show a specific division and hide others
+        function showDivision(divisionNumber) {
+            // Hide all divisions
+            const divisions = document.querySelectorAll('.division');
+            divisions.forEach(division => {
+                division.style.display = 'none';
+            });
+
+            // Show the selected division
+            const selectedDivision = document.getElementById(`division${divisionNumber}`);
+            if (selectedDivision) {
+                selectedDivision.style.display = 'block';
+            }
+        }
+
+        // Show Division 1 by default when the page loads
+        window.addEventListener('load', function () {
+            showDivision(1);
+        });
+    </script>
+</body>
+</html>

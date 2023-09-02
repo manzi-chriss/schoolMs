@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="h-screen w-full bg-slate-100 grid md:grid-cols-2  grid-cols-1">
+        <!-- left -->
+        <div class=" p-3 gap-3 space-y-8">
+            <form class=" flex max-h-[6vh]">
+                <input type="text" name="search" id="search" placeholder="Search ..." class=" p-3 w-4/5 bg-gray-200 border-2 border-black rounded-lg"> 
+                <button type="submit" class="p-3 w-1/5" title="search"><i class="fas fa-search fa-2x"></i></button>
+            </form>
+            <div class=" CommonBox h-[45vh] text-center  p-3">
+                <h2 class="text-shadow">School discipline</h2>
+            </div>
+            <div class="CommonBox text-center">
+                <h2 class="normal-typo py-2">Classes</h2>
+                <div class="grid grid-cols-3 py-2 min-h-[20vh]">
+                    <button class="small-box-shadow w-4/5 mx-auto aspect-square bg-white justify-center items-center flex">Level III</button>
+                    <button class="small-box-shadow w-4/5 mx-auto aspect-square bg-white justify-center items-center flex">Level IV</button>
+                    <button class="small-box-shadow w-4/5 mx-auto aspect-square bg-white justify-center items-center flex">Level V</button>
+                </div>
+            </div>
+        </div>
+        <!-- Right -->
+        <div class=" p-2 grid grid-flow-row space-y-8 text-center">
+            <div class="CommonBox ">
+                <h2 class="normal-typo py-2">Discipline Details</h2>
+                <div class="grid grid-cols-2 py-2 min-h-[20vh] my-auto">
+                    <button class="small-box-shadow w-4/5 mx-auto  bg-white justify-center items-center flex" title="w"></button>
+                    <button class="small-box-shadow w-4/5 mx-auto  bg-red-500 justify-center items-center flex" title="R"></button>
+                </div>
+            </div>
+            <div class="CommonBox min-h-[20vh]">
+                <h2 class="normal-typo py-2">Academic Year</h2>
+                <div class="grid grid-cols-3 py-2 min-h-[20vh] my-auto">
+                    <button class="small-box-shadow md:w-3/5 w-4/5 mx-auto aspect-square bg-white justify-center items-center flex">Term III</button>
+                    <button class="small-box-shadow md:w-3/5 w-4/5 mx-auto aspect-square bg-white justify-center items-center flex">Term II</button>
+                    <button class="small-box-shadow md:w-3/5 w-4/5 mx-auto aspect-square bg-white justify-center items-center flex">Term I</button>
+                </div>
+            </div>
+            <div class="CommonBox min-h-[20vh]">
+                <h2 class="normal-typo py-2">Other Inter</h2>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

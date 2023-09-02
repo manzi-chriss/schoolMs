@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML to PDF</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+      }
+      
+      table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+      }
+      
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      
+      button {
+        display: block;
+        margin: 20px auto;
+      }
+      
+  </style>
+</head>
+<body>
+  <table id="table">
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+      <th>Header 3</th>
+    </tr>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+      <td>Data 3</td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </table>
+  <button id="convertButton">Convert to PDF</button>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
+
+  <script>
+    // Load jsPDF library
+import jsPDF from 'jspdf';
+
+document.getElementById('convertButton').addEventListener('click', () => {
+  // Create a new jsPDF instance
+  const pdf = new jsPDF();
+
+  // Get the table element
+  const table = document.getElementById('table');
+
+  // Convert table to a data URL
+  const tableDataURL = table.toDataURL();
+
+  // Add the table as an image to the PDF
+  pdf.addImage(tableDataURL, 'PNG', 10, 10, 190, 0);
+
+  // Save the PDF
+  pdf.save('table.pdf');
+});
+
+  </script>
+</body>
+</html>

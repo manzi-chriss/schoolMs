@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <title>PDF</title>
+</head>
+<body>
+    <div class="form w-4/5 p-2 mx-auto">
+    <form class="form">        
+        <table>  
+            <thead class="text-center">
+                <tr>  
+                    <th>Full Name</th>    
+                    <th>marks</th>
+                    <th>Action</th> 
+                </tr>  
+            </thead>
+            <tbody>  
+                <tr>  
+                    <td>Dell</td>  
+                    <td>23</td>  
+                    <td class="flex"><button class="w-1/2 h-full p-0">Update</button> <a href="http://" class="w-1/2 h-fullp-0">Delete</a></td>                 
+                </tr>  
+                <tr>  
+                    <td>Dell</td>  
+                    <td>23</td>  
+                    <td class="flex"><button class="w-1/2 h-full p-0">Update</button> <a href="http://" class="w-1/2 h-fullp-0">Delete</a></td>                
+                </tr>  
+                <tr>  
+                    <td>Dell</td>  
+                    <td>23</td>  
+                    <td class="flex"><button class="w-1/2 h-full p-0">Update</button> <a href="http://" class="w-1/2 h-fullp-0">Delete</a></td>
+                </tr>  
+            </tbody>  
+        </table><br>  
+    </form>
+     <div class="w-full flex items-center justify-center">
+        <button type="button" id="generate_pdf" value="Generate PDF"> <i class="fa fa-download" aria-hidden="true"></i></button>
+     </div>
+</div>
+<script>
+$(document).ready(function () {  
+    var form = $('.form'),  
+    cache_width = form.width(),  
+    a4 = [595.28, 841.89]; // for a4 size paper width and height  
+
+    $('#generate_pdf').on('click', function () {  
+        $('body').scrollTop(0);  
+        generatePDF();  
+    });  
+    
+    function generatePDF() {  
+        getCanvas().then(function (canvas) {  
+            var img = canvas.toDataURL("image/SVG"),  
+             doc = new jsPDF({  
+                 unit: 'px',  
+                 format: 'a4'  
+             });  
+            doc.addImage(img, 'JPEG', 20, 20);  
+            doc.save('tech-html-to-pdf.pdf');  
+            form.width(cache_width);  
+        });  
+    }  
+      
+    function getCanvas() {  
+        form.width((a4[0] * 1.33333) - 80).css('max-width', 'none');  
+        return html2canvas(form, {  
+            imageTimeout: 2000,  
+            removeContainer: true  
+        });  
+    }
+});
+</script>
+</body>
+</html>

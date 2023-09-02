@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+  background-color: #E7EBFE;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9b0707;
+  border-radius: 3px;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+.header{
+  background: #D9D9D9;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: #555;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.marg-left{
+  margin-left: 250px;
+}
+.reset{
+  margin-left: 0;
+}
+#main {
+  transition: margin-left .5s;
+  background: #E7EBFE;;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.text-shadow{
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+font-family: Inter;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal; 
+}
+.CommonBox{
+  border-radius: 20px;
+  background: linear-gradient(180deg, #B2D6FF 0%, rgba(178, 214, 255, 0.00) 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
+}
+
+.normal-typo{
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.small-box-shadow{
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.landing {
+  background: linear-gradient(180deg, #FFF0 0%, rgba(255, 255, 255, 0.00) 100%);
+}
+.school-name{
+  color: #000;
+text-align: center;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+font-family: Inter;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.landing-btn{
+ background: #D9D9D9;
+ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* tables */
+table {  
+  border:#000 2px solid;
+  font-family: arial, sans-serif;  
+  /* border-collapse: collapse;   */
+  width: 100%;  
+}  
+
+td {  
+  border: 1px solid #dddddd;  
+  text-align: center;  
+} 
+th{
+  border: 1px solid #dddddd;  
+  padding: 8px;  
+  align-items: center;
+  text-align: center;
+  background-color: #0077ffe2 ;  
+  color:#000;
+  font-weight: 900;
+}
+tr:nth-child(2n+2){  
+  background-color: #dddddd6e;  
+}

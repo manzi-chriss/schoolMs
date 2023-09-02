@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="min-h-screen bg-slate-100 flex justify-center items-center">
+         <div class="p-3 md:w-3/6 sm:w-4/6 w-11/12">
+            <h1 class=" text-3xl text-center py-10">New student</h1>
+            <form action="" method="post" class="grid grid-flow-row gap-8">
+                <input type="text" name="name" id="name" placeholder="Full Name" class="border-2 border-black rounded-lg  bg-gray-200 md:p-4 p-3 text-xl">
+                <input type="text" name="regNumber" id="reg" placeholder="REG no" class="border-2 border-black rounded-lg  bg-gray-200 md:p-4 p-3 text-xl">
+                <div class="grid grid-cols-2 gap-[5rem]">
+                    <input type="number" name="year" id="year" placeholder="Year" class="border-2 border-black rounded-lg  bg-gray-200 md:p-4 p-3 text-xl">
+                    <input type="text" name="class" id="class" placeholder="Class" class="border-2 border-black rounded-lg  bg-gray-200 md:p-4 p-3 text-xl">
+                </div>
+                <input type="date" name="dob" id="dob" placeholder="Birth Date" class="border-2 border-black rounded-lg  bg-gray-200 md:p-4 p-3 text-xl"> 
+                <div class="grid grid-cols-2 gap-[5rem]">
+                    <input type="text" name="pname" id="pname" placeholder="Parent Name" class="border-2 border-black rounded-lg  bg-gray-200 md:p-4 p-3 text-xl">
+                    <input type="number" name="phone" id="phone" placeholder="Phone Number" class="border-2 border-black rounded-lg  bg-gray-200 md:p-4 p-3 text-xl">
+                </div>
+                <div class="flex justify-center items-center">
+                    <button type="submit" class="p-4 px-10 rounded-lg bg-blue-400 text-white font-extrabold text-2xl">Submit</button>
+                </div>
+            </form>
+         </div>
+    </div>
+</body>
+</html>
