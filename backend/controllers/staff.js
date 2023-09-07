@@ -1,10 +1,12 @@
 const router = require('express').Router();
-const Staff = require('../Models/Staff'); // Assuming the correct path
+const Staff = require('../Modles/Staff'); // Assuming the correct path
 
 // Route to save new staff members
 router.post('/', async (req, res) => {
     const { name, phone, title, id, responsibility } = req.body;
     try {
+        console.log(req.body);
+
         const staff = await Staff.findOne({ phone, id });
         if (staff) {
             return res.status(401).json({ message: "New staff member already exists" });
@@ -19,7 +21,8 @@ router.post('/', async (req, res) => {
         });
 
         await newStaff.save();
-        return res.status(201).json({ msg: "New staff member successfully created" });
+        
+        return res.status(201).json({ msg: "New staff member successfully created try relaoding page to see changes" });
     } catch (err) {
         return res.status(500).json({ message: err.message });
     }
@@ -29,8 +32,8 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const staff = await Staff.find();
-        const numberOfStaffMembers = staff.length;
-        return res.status(200).json({ staff, numberOfStaffMembers });
+        const numberAll = staff.length;
+        return res.status(200).json({ staff, numberAll,title:"TABLE OF REGISTERED STAFF MEMBER" });
     } catch (err) {
         return res.status(500).json({ message: err.message });
     }

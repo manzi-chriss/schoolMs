@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Admin = require('../Models/Admin'); // Assuming the correct path
+const Admin = require('../Modles/Admin'); // Assuming the correct path
 
 // Route to save a new Admin
 router.post('/', async (req, res) => {
