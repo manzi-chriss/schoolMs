@@ -5,7 +5,9 @@ const staffSchema= new  mongoose.Schema({
     id:{type:String, required:true},
     phone:{type:Number, required:true},
     title:{type:String, required:true},
-    responsibility:{type:String, required:true},   
+    responsibility:{type:String, required:true},
+    isAllowed:{type:Boolean, default:false},
+    password:{type:String, required:true},   
 })
 
 const Staff = mongoose.model('Staff',staffSchema)

@@ -13,11 +13,11 @@
         <div class="grid md:grid-cols-2 grid-cols-1 gap-3 m-4">
             <div class=" md:h-[30vh] sm:h-[26vh] h-[20vh] aspect-square bg-orange-600 rounded-full mx-auto"></div>
             <div class="bg-black md:w-4/5 w-full mx-auto border-2 rounded-lg p-4 grid grid-flow-row font-bold">
-                <p class="">Full Name: <span id="" class=" font-medium"></span></p>
-                <p class="">REG Number: <span id="" class=" font-medium"></span></p>
-                <p class="">DOB: <span id="" class=" font-medium"></span></p>
-                <p class="">CLASS: <span id="" class=" font-medium"></span></p>
-                <p class="">Year: <span id="" class=" font-medium"></span></p>
+                <p class="">Full Name: <span id="name" class=" font-medium"></span></p>
+                <p class="">REG Number: <span id="regNumber" class=" font-medium"></span></p>
+                <p class="">DOB: <span id="dob" class=" font-medium"></span></p>
+                <p class="">CLASS: <span id="level" class=" font-medium"></span></p>
+                <p class="">Year: <span id="year" class=" font-medium"></span></p>
             </div> 
         </div>
         <div class="bg-black w-11/12 mx-auto border-2 rounded-lg p-4 font-bold max-h-[50vh] overflow-y-scroll">
@@ -30,10 +30,11 @@
                 <div class="md:float-right md:w-1/5 grid grid-flow-row gap-3 text-center">
                     <h2 class=" font-bold text-2xl">Marks</h2>
                     <div class=" flex items-center justify-center aspect-square w-[7rem] bg-white text-black rounded-lg mx-auto">
-                        <p class="text-5xl font-extrabold">30</p>
+                        <p class="text-5xl font-extrabold" id="marks"></p>
                     </div>
                 </div>
         </div>
     </div>
+    <script src="./integration/getStudentProfile.js"></script>
 </body>
 </html>

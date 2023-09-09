@@ -8,6 +8,7 @@ document.getElementById("staffForm").addEventListener("submit", function (e) {
         id: document.getElementById("id").value,
         title: document.getElementById("title").value,
         responsibility: document.getElementById("ability").value,
+        password: document.getElementById("staffPassword").value
     };
 
     // Send a POST request to the API endpoint

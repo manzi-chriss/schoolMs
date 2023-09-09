@@ -12,11 +12,33 @@
             <h1 class=" font-extrabold md:text-7xl sm:text-5xl text-3xl text-white">Welcome to school name
                 discipline staff </h1>
                 <div class=" grid grid-rows-3 gap-3 py-6">
-                    <button class="landing-btn  p-4 rounded-lg md:w-3/5 w-5/6 mx-auto font-bold">continue as administrator</button>
-                    <button class="landing-btn  p-4 rounded-lg md:w-3/5 w-5/6 mx-auto font-bold">continue as discipline staff</button>
-                    <button class="landing-btn  p-4 rounded-lg md:w-3/5 w-5/6 mx-auto font-bold">continue as a student</button> 
+                    <button onclick="showSignIns(1,1)" class="landing-btn  p-4 rounded-lg md:w-3/5 w-5/6 mx-auto font-bold">continue as administrator</button>
+                    <button onclick="showSignIns(2,2)" class="landing-btn  p-4 rounded-lg md:w-3/5 w-5/6 mx-auto font-bold">continue as discipline staff</button>
+                    <button onclick="showSignIns(3,3)" class="landing-btn  p-4 rounded-lg md:w-3/5 w-5/6 mx-auto font-bold">continue as a student</button> 
                 </div>
         </div>
     </div>
+    <form id="signIn1" action="" class="signInToShow md:w-[40%] w-[80%]  bg-white absolute md:top-[40%] md:left-[30%] top-[45%] left-[10%] rounded-lg grid grid-flow-row px-3 py-5  gap-4">
+        <button onclick="showSignIns(0,0)" type="button" class="absolute top-1 right-2 md:top-6 md:right-7" title="close">x</button>
+        <h1 class="text-center">Credantials Are Required to use System </h1>
+        <input type="text" name="role"  id="role" placeholder="Title :" class="border-2 p-3 ">
+        <input type="number" name="phoneM"  id="phoneM" placeholder="Phone Number :" class="border-2 p-3 ">
+        <input type="password" name="passwordM"  id="passwordM" placeholder="Your Password" class="border-2 p-3 ">
+        <button id="submitSignIn1" type="submit" class="rounded-lg bg-blue-600 md:w-2/3 mx-auto w-full p-3">SignIn</button>
+    </form>
+    <form id="signIn2" action="" class="signInToShow md:w-[40%] w-[80%]  bg-white absolute md:top-[40%] md:left-[30%] top-[45%] left-[10%] rounded-lg grid grid-flow-row px-3 py-5 gap-4">
+        <button onclick="showSignIns(0,0)" type="button" class="absolute top-1 right-2 md:top-6 md:right-7" title="close">x</button>
+        <h1 class="text-center">SignIn with Phone and Password </h1>
+        <input type="number" name="phone"  id="phone" placeholder="Phone Number" class="border-2 p-3 ">
+        <input type="password" name="password"  id="password" placeholder="Your Password" class="border-2 p-3 ">
+        <button id="submitSignIn2" type="submit" class="rounded-lg bg-blue-600 md:w-2/3 mx-auto w-full p-3">SignIn</button>
+    </form>
+    <form id="signIn3" action="" class="signInToShow md:w-[40%] w-[80%] aspect-[2/1] bg-white absolute md:top-[40%] md:left-[30%] top-[45%] left-[10%] rounded-lg grid grid-flow-row px-3 py-5 gap-4">
+        <button onclick="showSignIns(0,0)" type="button" class="absolute top-1 right-2 md:top-6 md:right-7" title="close">x</button>
+        <h1 class="text-center">Please Add Your Registration Number</h1>
+        <input type="number" name="registrationNumber"  id="registrationNumber" placeholder="Registration Number" class="border-2 p-3 md:h-3/5">
+        <button id="submitSignIn3" type="submit" class="rounded-lg bg-blue-600 md:w-2/3 mx-auto md:h-3/5 w-full h-full">SignIn</button>
+    </form>
+    <script src="./integration//landingfunctionalities.js"></script>
 </body>
 </html>

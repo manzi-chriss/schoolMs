@@ -1,4 +1,5 @@
 function fetchDataAndRender() {
+        
     const apiUrl = "http://localhost:3000/home"; // Replace with your API endpoint URL
     fetch(apiUrl)
         .then((response) => {
@@ -29,8 +30,13 @@ function fetchDataAndRender() {
 
              const studentsinLevel5 = students.filter((student) => student.class === 5);
              //render the number of students in level 3 in a button with id called "level3"
-             document.getElementById("level5").innerText = studentsinLevel5.length
+             document.getElementById("level5").innerText = studentsinLevel5.length 
 
+             const staffNumber= staff.length
+             document.getElementById("totalStaff").innerText=staffNumber
+             const staffAllowedToSystem=staff.filter((staff) => staff.isAllowed==true)
+             const staffAllowedNumber=staffAllowedToSystem.length
+             document.getElementById("staffAllowed").innerText=staffAllowedNumber
         })
         .catch((error) => {
             document.getElementById("error").innerHTML =`${error.message},Your may Try to reload the page`;

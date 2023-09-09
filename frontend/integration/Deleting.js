@@ -8,12 +8,13 @@ function sendDeleteRequest(apiUrl) {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
+            body: JSON.stringify({msg:"resource to delete"})
         })
         .then(response => {
                 alert('Resource deleted successfully.');
         })
         .catch(error => {
-            alert('An error occurred while deleting the resource. msg:'+error.message);
-        });
+            alert('error msg in delete :'+error.message);
+        }); 
     }
 }

@@ -15,14 +15,14 @@
         <div id="mySidenav" class="sidenav text-white font-extrabold text-2xl pt-[9vh]">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <div class="grid grid-flow-row">
-          <button onclick="showDivision(1,0)" class="ml-2 p-3 pl-6">Dashboard</button>
-          <button onclick="showDivision(2,0)" class="ml-2 p-3 pl-6">Add Student</button>
-          <button onclick="showDivision(4,1)" class="ml-2 p-3 pl-6">All Student</button>
-          <button onclick="showDivision(4,2)" class="ml-2 p-3 pl-6">Organized</button>
-          <button onclick="showDivision(4,3)" class="ml-2 p-3 pl-6">Disorganized</button>
+          <button onclick="showDivision(1,0,0)" class="ml-2 p-3 pl-6">Dashboard</button>
+          <button onclick="showDivision(2,0,0)" class="ml-2 p-3 pl-6">Add Student</button>
+          <button onclick="showDivision(4,1,0)" class="ml-2 p-3 pl-6">All Student</button>
+          <button onclick="showDivision(4,2,0)" class="ml-2 p-3 pl-6">Organized</button>
+          <button onclick="showDivision(4,3,0)" class="ml-2 p-3 pl-6">Disorganized</button>
           <p class="text-center font-extralight text-[70%]">Instution</p>
-          <button onclick="showDivision(3,0)" class="ml-2 p-3 pl-6">New Staff</button>
-          <button onclick="showDivision(4,4)" class="ml-2 p-3 pl-6">The Staff</button>
+          <button onclick="showDivision(3,0,0)" class="ml-2 p-3 pl-6">New Staff</button>
+          <button onclick="showDivision(4,4,0)" class="ml-2 p-3 pl-6">The Staff</button>
           </div>
           <div class=" absolute bottom-8 grid grid-flow-row gap-4 text-center w-full text-white">
             <button onclick="" title="user"><span class="p-3 border-2 aspect-square rounded-full"><i class="fa fa-user " style="font-size:36px"></i></span></button>
@@ -51,9 +51,9 @@
                   <div class="CommonBox text-center">
                       <h2 class="normal-typo py-2">Classes</h2>
                       <div class="grid grid-cols-3 py-2 min-h-[20vh]">
-                          <button class="small-box-shadow w-4/5 mx-auto aspect-square bg-white justify-center items-center" onclick="showDivision(4,5,3)">Level III <p class="">Total: <span id="level3">345</span></p> </button>
-                          <button class="small-box-shadow w-4/5 mx-auto aspect-square bg-white justify-center items-center" onclick="showDivision(4,5,4)">Level IV<p class="">Total: <span id="level4">345</span></p> </button>
-                          <button class="small-box-shadow w-4/5 mx-auto aspect-square bg-white justify-center items-center" onclick="showDivision(4,5,5)">Level V<p class="">Total: <span id="level5">345</span></p> </button>
+                          <button class="small-box-shadow w-4/5 mx-auto aspect-square bg-white justify-center items-center" onclick="showDivision(4,5,3)">Level III <p class="">Total: <span id="level3"></span></p> </button>
+                          <button class="small-box-shadow w-4/5 mx-auto aspect-square bg-white justify-center items-center" onclick="showDivision(4,5,4)">Level IV<p class="">Total: <span id="level4"></span></p> </button>
+                          <button class="small-box-shadow w-4/5 mx-auto aspect-square bg-white justify-center items-center" onclick="showDivision(4,5,5)">Level V<p class="">Total: <span id="level5"></span></p> </button>
                       </div>
                   </div>
               </div>
@@ -64,26 +64,26 @@
                       <div class="grid grid-cols-2 py-2 min-h-[20vh] my-auto">
                           <button class="small-box-shadow w-4/5 mx-auto  bg-white justify-center items-center " onclick="showDivision(4,2)" title="w">
                             <h2>Student with 50% and Above</h2>
-                            <p class="">Total: <span id="disciplined">345</span></p> 
+                            <p class="">Total: <span id="disciplined"></span></p> 
                           </button>
                           <button class="small-box-shadow w-4/5 mx-auto  bg-red-500 justify-center items-center " onclick="showDivision(4,3)" title="R">
                             <h2>Student with below 50%</h2>
-                            <p class="">Total: <span id="notdisciplined">345</span></p> 
+                            <p class="">Total: <span id="notdisciplined"></span></p> 
                           </button>
                       </div>
                   </div>
                   <div class="CommonBox min-h-[20vh]">
                       <h2 class="normal-typo py-2">Academic Year</h2>
                       <div class="grid grid-cols-3 py-2 min-h-[20vh] my-auto">
-                          <button class="small-box-shadow md:w-3/5 w-4/5 mx-auto aspect-square bg-white justify-center items-center">Term III <p class="">Total: <span id="term1">345</span></p></button>
-                          <button class="small-box-shadow md:w-3/5 w-4/5 mx-auto aspect-square bg-white justify-center items-center">Term II <p class="">Total: <span id="term2">345</span></p></button>
-                          <button class="small-box-shadow md:w-3/5 w-4/5 mx-auto aspect-square bg-white justify-center items-center">Term I <p class="">Total: <span id="term3">345</span></p></button>
+                          <button class="small-box-shadow md:w-3/5 w-4/5 mx-auto aspect-square bg-white justify-center items-center">Term III <p class="">Total: <span id="term1"></span></p></button>
+                          <button class="small-box-shadow md:w-3/5 w-4/5 mx-auto aspect-square bg-white justify-center items-center">Term II <p class="">Total: <span id="term2"></span></p></button>
+                          <button class="small-box-shadow md:w-3/5 w-4/5 mx-auto aspect-square bg-white justify-center items-center">Term I <p class="">Total: <span id="term3"></span></p></button>
                       </div>
                   </div>
                   <div class="CommonBox min-h-[20vh] text-left">
                       <h2 class="normal-typo text-center py-2">Other Inter</h2>
-                      <p class="">Staff Member Registered:  <span id="totalStaff"></span></p>
-                      <p class="">Staff Member Allowed to use the system:  <span id="staffAllowed"></span></p>
+                      <p class="px-5">Staff Member Registered:  <span id="totalStaff"></span></p>
+                      <p class="px-5">Staff Member Allowed to use the system:  <span id="staffAllowed"></span></p>
                   </div>
               </div>
           </div>
@@ -137,6 +137,7 @@
                 <input type="number" name="ID" id="id" placeholder="ID:" class="border-2 border-black rounded-lg bg-gray-200 md:p-4 p-3 text-xl" required>
                 <input type="text" name="title" id="title" placeholder="Title:" class="border-2 border-black rounded-lg bg-gray-200 md:p-4 p-3 text-xl" required>
                 <input type="text" name="responsibilities" id="ability" placeholder="Responsibilities:" class="border-2 border-black rounded-lg bg-gray-200 md:p-4 p-3 text-xl" required>
+                <input type="password" name="staffPassword" id="staffPassword" placeholder="The passwoed S/He will use" class="border-2 border-black rounded-lg bg-gray-200 md:p-4 p-3 text-xl" required>
                 <div class="flex justify-center items-center">
                     <button type="submit" class="p-4 px-10 rounded-lg bg-blue-400 text-white font-extrabold text-2xl">Submit</button>
                 </div>
@@ -162,7 +163,7 @@
         </div>
         <script src="js/sidebar.js"></script>
         <script src="./js/updatingPopUp.js"></script>
-        <script src="integration/dashLinksApi.js"></script>
+        <script src="integration/dashLinksApiAndTables.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>  
         <script src="js/pdfgenerator.js"></script>
@@ -170,8 +171,7 @@
         <script src="integration/staffaddition.js"></script>
         <script src="integration/getHomePage.js"></script>
         <script src="integration/Deleting.js"></script>
-        <script> 
-            
-        </script>
+        <script src="./integration/updateStaffToUseSystem.js"></script>
+        <script> </script>
         </body>
 </html>

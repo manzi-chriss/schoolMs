@@ -5,7 +5,9 @@ const bodyParser=require(`body-parser`)
 // creating variable of of your server
 const app=express()
 
-// configuration of middleware
+
+
+
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cors())
@@ -17,6 +19,7 @@ const staffRoutes=require('./controllers/staff')
 const adminRoutes=require('./controllers/admin')
 const studentRoutes=require('./controllers/student')
 const homePageRoutes=require('./controllers/homepage')
+const signinRoutes=require('./controllers/signIn')
 
 // configuration of routes
 
@@ -24,6 +27,7 @@ app.use('/staff',staffRoutes)
 app.use('/admin',adminRoutes)
 app.use('/student',studentRoutes)
 app.use('/home',homePageRoutes)
+app.use('/signin',signinRoutes)
 // configuration of port
 
 const port=process.env.PORT || 3000

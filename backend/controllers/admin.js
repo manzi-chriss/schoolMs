@@ -5,7 +5,7 @@ const Admin = require('../Modles/Admin'); // Assuming the correct path
 router.post('/', async (req, res) => {
     const { name, password } = req.body;
     try {
-        const admin = await Admin.findOne({ password });
+        const admin = await Admin.findOne({ fullname:name });
         if (admin) {
             return res.status(401).json({ message: "New Admin already exists" });
         }

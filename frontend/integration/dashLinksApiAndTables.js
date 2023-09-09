@@ -1,4 +1,5 @@
-const  fetchDataOnSpecificUrl=(apiUrl,specification)=>{
+// JavaScript function to show deleteBtn specific division and hide others
+function  fetchDataOnSpecificUrl(apiUrl,specification){
     // simply the apiUrl is like "http://localhost:3000/home"; 
     fetch(apiUrl)
         .then((response) => {
@@ -92,10 +93,24 @@ const  fetchDataOnSpecificUrl=(apiUrl,specification)=>{
             let td1 = document.createElement('td');
             let td2 = document.createElement('td');
             let td3 = document.createElement('td');
+            let deleteBtn = document.createElement('button');
+            let allowBtn=document.createElement('button');
 
             td1.textContent = staff[i].fullName;
             td2.textContent = staff[i].title;
-            td3.textContent = "Delete";
+
+            allowBtn.innerText = "Allow";
+            deleteBtn.innerText = "Delete";
+
+            deleteBtn.setAttribute("class", "p-2 bg-red-500 hover:bg-red-600 w-full h-full");
+            deleteBtn.setAttribute("onClick", `sendDeleteRequest("http://localhost:3000/staff/${staff[i]._id}")`);
+            allowBtn.setAttribute("onClick", `allowStaffToUseSystem("http://localhost:3000/staff/allow/${staff[i]._id}")`);
+
+            if(staff[i].isAllowed==false){
+                td3.appendChild(allowBtn);
+                td3.setAttribute("class","grid grid-cols-2")
+            }
+            td3.appendChild(deleteBtn);
 
             tr.appendChild(td1);
             tr.appendChild(td2);
@@ -173,4 +188,48 @@ const  fetchDataOnSpecificUrl=(apiUrl,specification)=>{
         });
 }
 
-module.exports={fetchDataOnSpecificUrl}
+function  showDivision(divisionNumber, apinumber,parameterid){
+    // Hide all divisions
+    const divisions = document.querySelectorAll('.divisionToShow');
+    divisions.forEach(division => {
+        division.style.display = 'none';
+    });
+
+    // Show the selected division
+    const selectedDivision = document.getElementById(`show${divisionNumber}`);
+    if (selectedDivision) {
+        selectedDivision.style.display = '';
+        if (apinumber == 1) {
+            fetchDataOnSpecificUrl("http://localhost:3000/student","student");
+        } else if (apinumber == 2) {
+            fetchDataOnSpecificUrl("http://localhost:3000/student/organized/1","student");
+        } else if (apinumber == 3) {
+            fetchDataOnSpecificUrl("http://localhost:3000/student/organized/0","student");
+        } else if (apinumber == 4) {
+            fetchDataOnSpecificUrl("http://localhost:3000/staff","staff");
+        }else if(apinumber == 5) {
+            fetchDataOnSpecificUrl(`http://localhost:3000/student/level/${parameterid}`,"level");    
+        }else{
+            
+        }
+    }
+}
+
+// Show Division 1 by default when the page loads
+window.addEventListener('load', function () {
+    const storedUserData1 = localStorage.getItem('school_system_data_for_admin');
+    const storedUserData2 = localStorage.getItem('school_system_data_for_staff');
+    const admin = JSON.parse(storedUserData1);
+    const staff = JSON.parse(storedUserData2);        
+    if(admin){
+        showDivision(1,0,0);
+    }else if(staff){
+        showDivision(1,0,0);
+    }else{
+        alert("Please login first.")
+        window.location.href = "Landing.html";
+    }
+   
+});
+
+

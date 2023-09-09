@@ -3,10 +3,8 @@ const Staff = require('../Modles/Staff'); // Assuming the correct path
 
 // Route to save new staff members
 router.post('/', async (req, res) => {
-    const { name, phone, title, id, responsibility } = req.body;
+    const { name, phone, title, id, responsibility,password } = req.body;
     try {
-        console.log(req.body);
-
         const staff = await Staff.findOne({ phone, id });
         if (staff) {
             return res.status(401).json({ message: "New staff member already exists" });
@@ -17,7 +15,8 @@ router.post('/', async (req, res) => {
             phone,
             title,
             id,
-            responsibility
+            responsibility,
+            password
         });
 
         await newStaff.save();
@@ -68,6 +67,20 @@ router.put('/:id', async (req, res) => {
             return res.status(404).json({ msg: "Staff is not found" });
         }
         return res.status(200).json({ staff, msg: "Staff updated" });
+    } catch (error) {
+        return res.status(500).json({ msg: error.message });
+    }
+});
+//put request to allow staff to use system
+router.put('/allow/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const staff = await Staff.findByIdAndUpdate(id, {isAllowed: true});
+        if (!staff) {
+            return res.status(404).json({ msg: "Staff is not found" });
+        }
+        await staff.save()
+        return res.status(200).json({ msg: "Staff updated Now is Allowed to use the System" });
     } catch (error) {
         return res.status(500).json({ msg: error.message });
     }
